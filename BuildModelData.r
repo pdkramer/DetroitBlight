@@ -93,6 +93,7 @@ Model_Data <- rbind(blighted_properties, other_properties)
 #Also remove final unecessary data
 Model_Data$Latitude <- NULL
 Model_Data$Longitude <- NULL
+Model_Data$SalePrice <- as.numeric(gsub("\\$|,","",Model_Data$SalePrice))
 Model_Data$BlightNeighborCount <- (Model_Data$BlightNeighborCount - min(Model_Data$BlightNeighborCount)) /
                                   (max(Model_Data$BlightNeighborCount) - min(Model_Data$BlightNeighborCount))
 Model_Data$CrimeCount <- (Model_Data$CrimeCount - min(Model_Data$CrimeCount)) /
@@ -102,5 +103,5 @@ Model_Data$BlightCount <- (Model_Data$BlightCount - min(Model_Data$BlightCount))
 Model_Data$Call311Count <- (Model_Data$Call311Count - min(Model_Data$Call311Count)) /
                            (max(Model_Data$Call311Count) - min(Model_Data$Call311Count))
 
-
+write.csv(Model_Data, file="ModelData.csv")
 
