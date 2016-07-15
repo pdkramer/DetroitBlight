@@ -29,21 +29,21 @@ blighted_properties$BlightNeighborCount <- as.numeric(apply(as.matrix(blighted_p
                                                    cutoffdate=blighted_properties$PermitIssued))
 
 #Add crime counts
-work.df <- dCrime %>% sample_n(10000) %>% select(Latitude=LAT, Longitude=LON, TestDate=INCIDENTDATE)
+work.df <- dCrime %>% select(Latitude=LAT, Longitude=LON, TestDate=INCIDENTDATE)
 blighted_properties$CrimeCount <- 0 #initialize for performance
 blighted_properties$CrimeCount <- as.numeric(apply(as.matrix(blighted_properties[,c("Latitude","Longitude")]), 
                                                    1, nearby_count, df=work.df, radius=5, 
                                                    cutoffdate=blighted_properties$PermitIssued))
 
 #Add blight violations
-work.df <- dViol %>% sample_n(10000) %>% select(Latitude=Lat, Longitude=Lon, TestDate=TicketIssuedDT)
+work.df <- dViol %>% select(Latitude=Lat, Longitude=Lon, TestDate=TicketIssuedDT)
 blighted_properties$BlightCount <- 0 #initialize for performance
 blighted_properties$BlightCount <- as.numeric(apply(as.matrix(blighted_properties[,c("Latitude","Longitude")]), 
                                                    1, nearby_count, df=work.df, radius=2, 
                                                    cutoffdate=blighted_properties$PermitIssued))
 
 #Add 311 calls
-work.df <- d311 %>% sample_n(10000) %>% select(Latitude=lat, Longitude=lng, TestDate=acknowledged_at)
+work.df <- d311 %>% select(Latitude=lat, Longitude=lng, TestDate=acknowledged_at)
 blighted_properties$Call311Count <- 0 #initialize for performance
 blighted_properties$Call311Count <- as.numeric(apply(as.matrix(blighted_properties[,c("Latitude","Longitude")]), 
                                                     1, nearby_count, df=work.df, radius=2, 
@@ -66,21 +66,21 @@ other_properties$BlightNeighborCount <- as.numeric(apply(as.matrix(blighted_prop
                                                             cutoffdate=today()))
 
 #Add crime counts
-work.df <- dCrime %>% sample_n(10000) %>% select(Latitude=LAT, Longitude=LON, TestDate=INCIDENTDATE)
+work.df <- dCrime %>% select(Latitude=LAT, Longitude=LON, TestDate=INCIDENTDATE)
 other_properties$CrimeCount <- 0 #initialize for performance
 other_properties$CrimeCount <- as.numeric(apply(as.matrix(other_properties[,c("Latitude","Longitude")]), 
                                                    1, nearby_count, df=work.df, radius=5, 
                                                    cutoffdate=today()))
 
 #Add blight violations
-work.df <- dViol %>% sample_n(10000) %>% select(Latitude=Lat, Longitude=Lon, TestDate=TicketIssuedDT)
+work.df <- dViol %>% select(Latitude=Lat, Longitude=Lon, TestDate=TicketIssuedDT)
 other_properties$BlightCount <- 0 #initialize for performance
 other_properties$BlightCount <- as.numeric(apply(as.matrix(other_properties[,c("Latitude","Longitude")]), 
                                                     1, nearby_count, df=work.df, radius=2, 
                                                     cutoffdate=today()))
 
 #Add 311 calls
-work.df <- d311 %>% sample_n(10000) %>% select(Latitude=lat, Longitude=lng, TestDate=acknowledged_at)
+work.df <- d311 %>% select(Latitude=lat, Longitude=lng, TestDate=acknowledged_at)
 other_properties$Call311Count <- 0 #initialize for performance
 other_properties$Call311Count <- as.numeric(apply(as.matrix(other_properties[,c("Latitude","Longitude")]), 
                                                      1, nearby_count, df=work.df, radius=2, 
