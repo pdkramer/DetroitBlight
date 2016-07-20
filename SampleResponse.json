@@ -1,0 +1,59 @@
+{
+  "Results": {
+    "output1": {
+      "type": "DataTable",
+      "value": {
+        "ColumnNames": [
+          "SalePrice",
+          "TaxStatus",
+          "IsImproved",
+          "BlightStatus",
+          "BlightNeighbors",
+          "Crimes",
+          "BlightViolations",
+          "Calls311",
+          "Scored Labels",
+          "Scored Probabilities"
+        ],
+        "ColumnTypes": [
+          "Numeric",
+          "String",
+          "Numeric",
+          "String",
+          "Numeric",
+          "Numeric",
+          "Numeric",
+          "Numeric",
+          "String",
+          "Numeric"
+        ],
+        "Values": [
+          [
+            "0",
+            "value",
+            "0",
+            "value",
+            "0",
+            "0",
+            "0",
+            "0",
+            "value",
+            "0"
+          ],
+          [
+            "0",
+            "value",
+            "0",
+            "value",
+            "0",
+            "0",
+            "0",
+            "0",
+            "value",
+            "0"
+          ]
+        ]
+      }
+    }
+  }
+}

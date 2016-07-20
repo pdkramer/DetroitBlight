@@ -1,0 +1,39 @@
+{
+  "Inputs": {
+    "input1": {
+      "ColumnNames": [
+        "SalePrice",
+        "TaxStatus",
+        "IsImproved",
+        "BlightStatus",
+        "BlightNeighbors",
+        "Crimes",
+        "BlightViolations",
+        "Calls311"
+      ],
+      "Values": [
+        [
+          "0",
+          "value",
+          "0",
+          "value",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "value",
+          "0",
+          "value",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    }
+  },
+  "GlobalParameters": {}
+}
