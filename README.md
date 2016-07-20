@@ -1,2 +1,2 @@
 # DetroitBlight
-Files for the Data Science Captsone project on Coursera
+Files for the Data Science Capstone project on Coursera
